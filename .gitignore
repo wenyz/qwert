@@ -26,3 +26,5 @@ build/
 
 #gradle
 .gradle/
+
+venv/
