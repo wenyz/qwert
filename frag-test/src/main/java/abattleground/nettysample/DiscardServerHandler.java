@@ -10,21 +10,34 @@ public class DiscardServerHandler extends ChannelInboundHandlerAdapter {
 
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
+//        ByteBuf in = (ByteBuf) msg;
+//        try {
+//            System.out.print("Client Said:");
+//            while (in.isReadable()) { // (1)
+//                System.out.print((char) in.readByte());
+//                System.out.flush();
+//            }
+//            String back = "I received!";
+//            ByteBuf out = ctx.alloc().buffer(back.length());
+//            out.writeBytes(back.getBytes());
+//            ctx.writeAndFlush(out);
+//            ctx.close();
+//        } finally {
+//            ReferenceCountUtil.release(msg); // (2)
+//        }
+
         ByteBuf in = (ByteBuf) msg;
         try {
-            System.out.print("Client Said:");
             while (in.isReadable()) { // (1)
                 System.out.print((char) in.readByte());
                 System.out.flush();
             }
-            String back = "I received!";
-            ByteBuf out = ctx.alloc().buffer(back.length());
-            out.writeBytes(back.getBytes());
-            ctx.writeAndFlush(out);
-            ctx.close();
+            System.out.println("\r\n");
         } finally {
             ReferenceCountUtil.release(msg); // (2)
         }
+
+
     }
 
     @Override

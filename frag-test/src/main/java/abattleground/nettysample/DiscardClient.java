@@ -8,8 +8,9 @@ import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
+import io.netty.handler.codec.LineBasedFrameDecoder;
 
-    public class DiscardClient {
+public class DiscardClient {
 
     public static void main(String[] args) throws Exception {
         String host = "localhost";
@@ -24,6 +25,7 @@ import io.netty.channel.socket.nio.NioSocketChannel;
             b.handler(new ChannelInitializer<SocketChannel>() {
                 @Override
                 public void initChannel(SocketChannel ch) throws Exception {
+                    ch.pipeline().addLast(new LineBasedFrameDecoder(1024));
                     ch.pipeline().addLast(new DiscardClientHandler());
                 }
             });
