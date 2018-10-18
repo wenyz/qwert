@@ -1,0 +1,44 @@
+#! /bin/sh
+
+# imx 无线网络自动连接 脚本
+ifconfig wlan0 up
+
+iwconfig wlan0 essid "imax6" key s:launch1234567
+
+sleep 5
+
+set i=0;
+set j=0;
+result=""
+for((i=0;i<20;))
+do
+if [ $result == 'ESSID:"imax6"' ]
+    then
+        echo "success connect to the wifi"
+        break;
+    else
+        echo "reconnect to the wifi"
+        iwconfig wlan0 essid "imax6" key s:launch1234567
+        sleep 5
+        result=`iwconfig wlan0|sed -n '1p;1q'|awk '{print $4}'`
+        echo "reconnect to the wifi result  "$result
+fi
+done;
+
+udhcpc -i wlan 0
+sleep 5
+result=""
+for((i=0;i<20;))
+do
+if [ -n $result ]
+    then
+        echo "success get ip address"
+        break;
+    else
+        echo "reget ip address"
+        udhcpc -i wlan0
+        sleep 5
+        result=`ifconfig wlan0|grep "inet addr"`
+        echo "reget ip address result  "$result
+fi
+done;
