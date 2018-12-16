@@ -32,7 +32,8 @@ public class PahoTlsExample {
         String topic = "MQTT Examples";
         String content = "GGGGG";
         int qos = 2;
-        String broker = "ssl://121.43.180.66:8883";
+        //String broker = "ssl://121.43.180.66:8883";
+        String broker = "ssl://192.168.111.138:8883";
         String clientId = "JavaSample";
         MemoryPersistence persistence = new MemoryPersistence();
 
@@ -42,7 +43,8 @@ public class PahoTlsExample {
             connOpts.setCleanSession(true);
             SSLSocketFactory factory = null;
             try {
-                factory = getSSLSocktet("D:/cacert.crt", "D:/caclient2.crt", "D:/client2-pkcs7.pem", "");
+                //factory = getSSLSocktet("D:/cacert.crt", "D:/caclient2.crt", "D:/client2-pkcs7.pem", "");
+                factory = getSSLSocktet("D:/emqssl/cacert.crt", "D:/emqssl/client-cert.crt", "D:/emqssl/client-key-pkcs8.pem", "brt123");
             } catch (Exception e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
