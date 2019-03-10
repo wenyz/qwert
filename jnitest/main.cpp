@@ -3,6 +3,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <malloc.h>
 using namespace cv;
 using namespace std;
 

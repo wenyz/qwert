@@ -45,3 +45,16 @@ target_link_libraries(op008 ${OpenCV_LIBS})
 
 add_executable(op009 opcvl/op009.cpp )
 target_link_libraries(op009 ${OpenCV_LIBS})
+
+add_executable(op010 opcvl/op010.cpp )
+target_link_libraries(op010 ${OpenCV_LIBS})
+
+
+add_executable(se001 selft/se001.cpp )
+target_link_libraries(se001 ${OpenCV_LIBS})
+
+add_executable(scsp selft/consumep/scsp.cpp )
+target_link_libraries(scsp ${OpenCV_LIBS})
+
+add_executable(wlist common/wlist.c )
+target_link_libraries(scsp ${OpenCV_LIBS})
