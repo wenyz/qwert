@@ -26,6 +26,7 @@ public class BluCatUtil {
 
 	  if (!LocalDevice.isPowerOn()){
 
+
 	   System.err.println("#There is no Bluetooth Adaptor powered on");
 	   System.exit(-1);
 	  }
