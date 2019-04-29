@@ -69,6 +69,22 @@
             <systemPath>${project.basedir}/lib/size-of-object-1.0-SNAPSHOT.jar</systemPath>
         </dependency>
 
+        <dependency>
+            <groupId>com.wenyize</groupId>
+            <artifactId>size-of-object1</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/bluecove-2.1.1-SNAPSHOT (1).jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>com.wenyize</groupId>
+            <artifactId>size-of-object2</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/commons-io-2.5.jar</systemPath>
+        </dependency>
+
     </dependencies>
 
     <build>
