@@ -4,11 +4,9 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.wenyize.SizeOfObject;
-import  com.wenyize.SizeOfObject.*;
+
 import sun.instrument.InstrumentationImpl;
 
-import static com.wenyize.SizeOfObject.*;
 
 // 运行本测试需要追加虚拟机参数 javaagent
 // -javaagent:G:\WORK\qwert\frag-test\lib\size-of-object-1.0-SNAPSHOT.jar
@@ -22,6 +20,6 @@ public class sizeobj {
         Map<String,String> sss = new HashMap<>();
 
         System.out.println(new File("target/classes").getAbsolutePath());
-        System.out.println("sizeOf(new Object())=" + sizeOf(sss));
+//        System.out.println("sizeOf(new Object())=" + sizeOf(sss));
     }
 }
